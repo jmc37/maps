@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         val name = findViewById<EditText>(R.id.editTextTextPersonName)
         println(mapFragment.getLocation())
         val person = mapFragment.getLocation()?.let { Person(name.text.toString(), location = it) }
-        if (person != null) {
+        if (person != null && name.text.toString() != "") {
             db.collection("people")
                 .add(person)
                 .addOnSuccessListener { documentReference ->
@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                     Log.w("ADD PERSON", "Error adding document", e)
                 }
         }
+        name.text.clear()
     }
 
 

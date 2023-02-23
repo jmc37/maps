@@ -5,4 +5,5 @@
     <string name="people">People</string>
     <string name="person_location">Location:</string>
     <string name="name_person">Person:</string>
+    <string name="back">Back</string>
 </resources>
